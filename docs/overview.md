@@ -1,4 +1,4 @@
-# Creating and working with Leap Motion gesture samples
+# Leap Motion Gesture Samples
 
 A quick walkthrough demonstrating the process of ...
 
