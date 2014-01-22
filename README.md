@@ -16,7 +16,7 @@ The inline viewer ([index.html](index.html)) provides ...
 
 ---
 
-See [data](https://github.com/joyrexus/leap-view/tree/master/data) for a sample data file.
+See [data](https://github.com/joyrexus/leap-view/tree/master/data) for a sample data file.  Try loading this sample in our [demo viewer](http://joyrexus.github.io/sgm/tohf/index.html) page for a quick preview of how things work.
 
 See [docs/overview](https://github.com/joyrexus/leap-view/blob/master/docs/overview.md) for a step-by-step walkthrough of the process of capturing and
 extracting gesture data.
