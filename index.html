@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  body {
+    margin-top: 25px;
+    margin-left: 50px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    color: #777;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  #file {
+    color: steelblue;
+    font-size: 75px;
+  }
+  
+  #file:hover {
+    color: orange;
+    cursor: pointer;
+  }
+  
+  input {
+    visibility: hidden;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 75px;
+    width: 515px;
+  }
+  .clickable:hover {
+    color: orange;
+    cursor: pointer;
+  }
+
+  a {
+    color: #777;
+    text-decoration: none;
+  }
+  a:hover {
+    color: orange;
+  }
+
+  #between {
+    visibility: hidden;
+  }
+  #download {
+    visibility: hidden;
+  }
+  
+  #fileInfo {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+  }
+
+  #controls {
+    visibility: hidden;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    background-color: #C8C8C8;
+    width: 500px;
+    height: 25px;
+    margin: 0px;
+  }
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #777;
+    width: 20px;
+    height: 25px;
+    cursor: ew-resize;
+  }
+  output {
+    font-family: 'Helvetica Neue';
+    font-weight: 300;
+    font-size: 25px;
+    color: #777;
+    vertical-align: middle;
+  }
+
+  #palm {
+    position: absolute;
+    background-color: steelblue;
+    border-radius: 50px;
+    width: 100px;
+    height: 125px;
+    left: 50%;
+    bottom: 10%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .point {
+    position: absolute;
+    background-color: steelblue;
+    border-radius: 20px;
+    width: 25px;
+    height: 30px;
+    left: 50%;
+    bottom: 20%;
+    opacity: 0;
+  }
+</style>
+<body>
+  <div id="fileInfo">
+    <div id="file">Click and choose sample</div>
+    <input type="file" id="chooser">
+  </div>
+  <div id="controls">
+    <input type=range id=slider min=0 max=2000 value=0 step=1>
+    <output for=slider id=sliderOutput>0</output>
+  </div>
+  <div class="info">
+    <div class="clickable" id="startingTime"></div>
+    <div id="between">–</div>
+    <div class="clickable" id="stoppingTime"></div>
+    <a href="data:attachment/csv" id="download" download="data.csv">↓</a>
+  </div>
+  <div id="palm">
+  </div>
+    <div class="point" id="A"></div>
+    <div class="point" id="B"></div>
+    <div class="point" id="C"></div>
+    <div class="point" id="D"></div>
+    <div class="point" id="E"></div>
+<script src="lib/render.js"></script>
+<script src="lib/main.js"></script>
