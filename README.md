@@ -11,5 +11,7 @@ The inline viewer provides ...
 
 * extraction of motion data within specified time ranges
 
-See the docs for a step-by-step walkthrough of the process of capturing and
+See [data](tree/master/data) for a sample data file.
+
+See [docs/overview](https://github.com/joyrexus/leap-view/blob/master/docs/overview.md) for a step-by-step walkthrough of the process of capturing and
 extracting gesture data.
