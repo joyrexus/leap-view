@@ -41,6 +41,11 @@ Once you've loaded your sample file in the viewer it will render the recorded ha
 
 ---
 
+You can always load a new sample by clicking the filename of the currently loaded sample.
+
+
+#### Playback controls
+
 The viewer provides basic playback controls as well as the ability to specify particular regions of interest within the sample.  
 
 The primary playback control is the spacebar, which toggles between a pause and
