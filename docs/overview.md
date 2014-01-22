@@ -2,7 +2,7 @@
 
 A quick walkthrough demonstrating the process of ...
 
-1. recording a gesture sample with the Leap motion device
+1. recording a gesture sample with a [Leap Motion](https://www.leapmotion.com/product) device
 2. viewing recorded samples
 3. extracting postion and velocity data from recorded samples
 
