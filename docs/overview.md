@@ -22,7 +22,7 @@ The resulting sample file contains leap frame data saved as [line-delimited JSON
 
 ## Rendering recorded samples
 
-Once you have a sample recorded, you can load and view it in a web browser using our [viewer](http://joyrexus.github.io/sgm/tohf/index.html).  The viewer allows you to click and choose a sample file you've saved (e.g. `sample.ldj`).  
+Once you have a sample recorded, you can load and view it in a web browser using our [viewer](https://github.com/joyrexus/leap-view).  The viewer allows you to click and choose a sample file you've recorded (e.g. [sample.ldj](https://github.com/joyrexus/leap-view/blob/master/data/sample.ldj)).  
 
 Below we'll walk through an example of loading a recorded sample, using the playback controls, and selecting a region of interest (a subset of frames representing a duration of time within the full sample). Once a region/duration is selected you can download the position/velocity data associated with that region. (Note: Given our particular research question, we're only interested in the **vertical** position and velocity of the captured gesture.)
 
