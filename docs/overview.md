@@ -115,3 +115,11 @@ attributes for each frame in the following four columns:
 The screenshot below shows a [sample data file](https://docs.google.com/spreadsheet/ccc?key=0AmrUeNvUdKG1dFlJbUdVRmVCbTNjcVFPUTFRdi1Kb3c&usp=sharing). 
 
 ![csv data](pix/6-data.png)
+
+
+## Customizing the motion data to be extracted
+
+The demo viewer was designed to extract and download vertical position/velocity
+data for user-selected ranges.  You can customize the motion data that gets extacted and downloaded by modifying the [exportRange](https://github.com/joyrexus/leap-view/blob/master/src/main.coffee#L75-L86) method in [main.js](https://github.com/joyrexus/leap-view/blob/master/lib/main.js#L103-L116).
+
+What motion data is available for extraction?  See [this reference](https://github.com/leapmotion/leapjs/blob/master/PROTOCOL.md#frames) for an overview of the JSON schema used for each of the frames within a sample. See the provided gesture sample ([sample.ldj](https://github.com/joyrexus/leap-view/blob/master/data/sample.ldj)) to see some sample frames, where each line consists of one frame.
