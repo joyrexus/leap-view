@@ -1,15 +1,20 @@
 # leap-view
 
-Render [leap motion]() gesture samples recorded with the [leap-record]()
-utility.
+Render [leap motion](https://www.leapmotion.com) gesture samples recorded with the [leap-record](https://github.com/joyrexus/leap-record) utility.
 
-The inline viewer provides ...
+The inline viewer ([index.html](index.html)) provides ...
 
 * simple playback controls
 
 * user-specifiable time ranges
 
 * extraction of motion data within specified time ranges
+
+---
+
+![screenshot](screenshot.png)
+
+---
 
 See [data](tree/master/data) for a sample data file.
 
