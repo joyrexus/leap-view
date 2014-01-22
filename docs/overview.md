@@ -1,9 +1,10 @@
-# Capture and extraction of gesture data
+# Creating and working with Leap Motion gesture samples
 
-The following is a brief description of how to ... 
+A quick walkthrough demonstrating the process of ...
 
-1. record a gesture sample with the Leap motion device
-2. extract postion and velocity data from recorded samples
+1. recording a gesture sample with the Leap motion device
+2. viewing recorded samples
+3. extracting postion and velocity data from recorded samples
 
 
 ## Recording a gesture sample
@@ -19,7 +20,7 @@ You'll get get prompted to start and stop the recording.
 The resulting sample file contains leap frame data saved as [line-delimited JSON](http://en.wikipedia.org/wiki/Line_Delimited_JSON).  This is a convenient format for the reading and writing of data streams.  For example, such a format makes it easy to extract specific attributes from each line/frame.  The [ldj-pipe] (https://github.com/joyrexus/ldj-pipe#ldj-pipe) is designed to make this sort of streaming data extraction easy and straightforward.
 
 
-## Extracting position/velocity data
+## Rendering recorded samples
 
 Once you have a sample recorded, you can load and view it in a web browser using our [viewer](http://joyrexus.github.io/sgm/tohf/index.html).  The viewer allows you to click and choose a sample file you've saved (e.g. `sample.ldj`).  
 
@@ -53,6 +54,9 @@ play state.  You can also use the arrow keys to navigate through the rendered fr
 
 Additionally, you can use the range-slider to manually slide forward or
 backward in time within the sample.  
+
+
+## Extracting position/velocity data
 
 The range-slider and keyboard controls make it possible to identify specific regions of interest (i.e., durations of time) within the sample.  Once a region/duration is specified you can download a CSV file containing the postion/velocity data for that particular region for analysis.
 
