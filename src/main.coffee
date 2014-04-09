@@ -76,7 +76,7 @@ setRange = ->
 exportRange = ->
   [start, stop] = [currentRange.start, currentRange.stop]
   rows = []
-  if start and stop
+  if start? and stop?
     rows.push 'FRAME_ID,TIME,Y_POS,Y_VEL'   # column header
     for i in [start..stop]                  # iterate over frames in queue
       frame = queue[i]
