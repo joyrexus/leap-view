@@ -1,4 +1,4 @@
-queue = []          # queue of frames
+queue = []            # queue of frames
 
 # load handler invoked on change event
 load = -> 
@@ -18,7 +18,7 @@ load = ->
     controls.style.visibility = 'visible'
     slider.style.visibility = 'visible'
     queue.push(JSON.parse row) for row in @result.split('\n') \
-                                when row.match /timestamp/
+                                          when row.match /timestamp/
     render queue
     slider.max = queue.length - 1
     ''
