@@ -75,17 +75,8 @@ setRange = ->
 # export frame data within specified range as a csv file
 exportRange = ->
   [start, stop] = [currentRange.start, currentRange.stop]
-  rows = []
-  if start? and stop?
-    rows.push 'FRAME_ID,TIME,Y_POS,Y_VEL'   # column header
-    for i in [start..stop]                  # iterate over frames in queue
-      frame = queue[i]
-      h = frame.hands[0]                    # data from first hand
-      secs = (frame.timestamp - startTime) / 1000000    # in seconds
-      #      FRAME_ID, TIME, Y_POS   ......   , Y_VEL
-      row = [frame.id, secs, h.palmPosition[1], h.palmVelocity[1]]
-      rows.push row.join(',')   # join values with comma
-  csv = rows.join('\n')         # join rows with newlines
+  range = queue[start..stop]
+  csv = extract.distance(range)
   download.href = 'data:attachment/csv,' + encodeURI(csv)
   download.download = file.innerText.replace('.ldj', '.csv')
 

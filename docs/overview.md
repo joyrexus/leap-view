@@ -4,7 +4,7 @@ A quick walkthrough demonstrating the process of ...
 
 1. recording a gesture sample with a [Leap Motion](https://www.leapmotion.com/product) device
 2. viewing recorded samples
-3. extracting postion and velocity data from recorded samples
+3. extracting frame data from recorded samples
 
 
 ## Recording a gesture sample
@@ -24,7 +24,7 @@ The resulting sample file contains leap frame data saved as [line-delimited JSON
 
 Once you have a sample recorded, you can load and view it in a web browser using our [viewer](https://github.com/joyrexus/leap-view).  The viewer allows you to click and choose a sample file you've recorded (e.g. [sample.ldj](https://github.com/joyrexus/leap-view/blob/master/data/sample.ldj)).  
 
-Below we'll walk through an example of loading a recorded sample, using the playback controls, and selecting a region of interest (a subset of frames representing a duration of time within the full sample). Once a region/duration is selected you can download the position/velocity data associated with that region. (Note: Given our particular research question, we're only interested in the **vertical** position and velocity of the captured gesture.)
+Below we'll walk through an example of loading a recorded sample, using the playback controls, and selecting a region of interest (a subset of frames representing a duration of time within the full sample). Once a region/duration is selected you can download specific types of frame data associated with that region.
 
 ---
 
@@ -61,9 +61,9 @@ Additionally, you can use the range-slider to manually slide forward or
 backward in time within the sample.  
 
 
-## Extracting position/velocity data
+## Extracting frame data
 
-The range-slider and keyboard controls make it possible to identify specific regions of interest (i.e., durations of time) within the sample.  Once a region/duration is specified you can download a CSV file containing the postion/velocity data for that particular region for analysis.
+The range-slider and keyboard controls make it possible to identify specific regions of interest (i.e., durations of time) within the sample.  Once a region/duration is specified you can download a CSV file containing frame data for that particular region for analysis.  The specific attributes that are extracted from each frame of data is configurable. (See `src/extract.coffee` for a current list of options and examples.)
 
 Using the playback controls, find the starting point of the region you want to analyze.  The viewer should be paused on whatever frame you want as the starting point.  Click the palm of the rendered hand to mark the starting time:
 
@@ -105,7 +105,8 @@ The CSV file should be downloaded automatically to your `Downloads` folder.
 [The resulting file](https://docs.google.com/spreadsheet/ccc?key=0AmrUeNvUdKG1dFlJbUdVRmVCbTNjcVFPUTFRdi1Kb3c&usp=sharing) will have a file name corresponding to the sample file that was loaded.  For example, if you loaded a file named `sample.ldj`, the resulting file will be named `sample.csv`. 
 
 This file will have one row per frame within the specified duration, with
-attributes for each frame in the following four columns:
+attributes values for each frame in the columns.  For example, when extracting
+vertical velocity/postion data you'd generate a CSV-file containing the following four columns:
 
 * `FRAME_ID` - the unique frame ID
 * `TIME` - timestamp in seconds
@@ -119,7 +120,10 @@ The screenshot below shows a [sample data file](https://docs.google.com/spreadsh
 
 ## Customizing the motion data to be extracted
 
-The demo viewer was designed to extract and download vertical position/velocity
-data for user-selected ranges.  You can customize the motion data that gets extacted and downloaded by modifying the [exportRange](https://github.com/joyrexus/leap-view/blob/master/src/main.coffee#L75-L86) method in [main.js](https://github.com/joyrexus/leap-view/blob/master/lib/main.js#L103-L116).
+The demo viewer was designed to extract and download frame data for user-selected ranges.  You can customize the frame data that gets extacted and downloaded by ...
+
+1. adding an extraction method to `src/extract.coffee`
+
+2. modifying the [exportRange](https://github.com/joyrexus/leap-view/blob/master/src/main.coffee) method in [main.js](https://github.com/joyrexus/leap-view/blob/master/lib/main.js); just indicate which extraction method you wish to use. 
 
 What motion data is available for extraction?  See [this reference](https://github.com/leapmotion/leapjs/blob/master/PROTOCOL.md#frames) for an overview of the JSON schema used for each of the frames within a sample. See the provided gesture sample ([sample.ldj](https://github.com/joyrexus/leap-view/blob/master/data/sample.ldj)) to see some sample frames, where each line consists of one frame.

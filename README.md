@@ -6,7 +6,7 @@ The inline viewer ([index.html](index.html)) provides ...
 
 * [simple playback controls](https://github.com/joyrexus/leap-view/blob/master/docs/overview.md#playback-controls)
 
-* [extraction of motion data within user specified time ranges](https://github.com/joyrexus/leap-view/blob/master/docs/overview.md#extracting-positionvelocity-data)
+* [extraction of frame data within user specified time ranges](https://github.com/joyrexus/leap-view/blob/master/docs/overview.md#extracting-frame-data)
 
 ---
 
