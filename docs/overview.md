@@ -122,8 +122,8 @@ The screenshot below shows a [sample data file](https://docs.google.com/spreadsh
 
 The demo viewer was designed to extract and download frame data for user-selected ranges.  You can customize the frame data that gets extacted and downloaded by ...
 
-1. adding an extraction method to `src/extract.coffee`
+1. adding an extraction method to [src/extract.coffee](https://github.com/joyrexus/leap-view/blob/master/src/extract.coffee#L10-L54)
 
-2. modifying the [exportRange](https://github.com/joyrexus/leap-view/blob/master/src/main.coffee) method in [main.js](https://github.com/joyrexus/leap-view/blob/master/lib/main.js); just indicate which extraction method you wish to use. 
+2. modifying the [exportRange](https://github.com/joyrexus/leap-view/blob/master/src/main.coffee#L79) method in `src/main.coffee`; just indicate which extraction method you wish to use. 
 
 What motion data is available for extraction?  See [this reference](https://github.com/leapmotion/leapjs/blob/master/PROTOCOL.md#frames) for an overview of the JSON schema used for each of the frames within a sample. See the provided gesture sample ([sample.ldj](https://github.com/joyrexus/leap-view/blob/master/data/sample.ldj)) to see some sample frames, where each line consists of one frame.
